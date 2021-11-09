@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -21,8 +22,10 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: Column(
-          children: [],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [CardSwipper(), MovieSlider()],
+          ),
         ));
   }
 }
