@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class MovieSlider extends StatelessWidget {
   const MovieSlider({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class MovieSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 270,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -17,6 +18,9 @@ class MovieSlider extends StatelessWidget {
           Text(
             'Populares',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 10,
           ),
           Expanded(
             child: ListView.builder(
@@ -50,7 +54,7 @@ class _MovieContainer extends StatelessWidget {
                 placeholder: AssetImage('assets/no-image.jpg'),
                 image: NetworkImage('https://picsum.photos/200/300'),
                 width: 130,
-                height: 190,
+                height: 200,
                 fit: BoxFit.cover,
               ),
             ),
