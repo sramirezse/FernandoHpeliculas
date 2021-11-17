@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:peliculas/models/models.dart';
@@ -7,12 +6,13 @@ import 'package:peliculas/models/models.dart';
 class MoviesProvider extends ChangeNotifier {
   String _apiKey = 'a2ebfc0f86b1bb51272bcb43c7b16065';
   String _baseUrl = 'api.themoviedb.org';
-  String _language = 'es-Es';
+  String _language = 'en-Us';
   List<Movie> onDisplayMovies = [];
   List<Movie> popularMovies = [];
   MoviesProvider() {
     print('constructor');
     this.getOnDisplayMovies();
+    this.getPopularMovies();
   }
   getOnDisplayMovies() async {
     var url = Uri.https(_baseUrl, '3/movie/now_playing', {

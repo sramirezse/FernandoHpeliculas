@@ -3,7 +3,12 @@ import 'package:peliculas/providers/movies_provider.dart';
 import 'package:peliculas/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final moviesProvider = Provider.of<MoviesProvider>(context);
@@ -32,7 +37,10 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 5,
               ),
-              MovieSlider()
+              MovieSlider(
+                movies: moviesProvider.popularMovies,
+                title: 'Populares',
+              ),
             ],
           ),
         ));

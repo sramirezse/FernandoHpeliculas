@@ -34,7 +34,7 @@ class Movie {
   int voteCount;
 
   get fullPosterImg {
-    if (this.posterPath != null) return 'https://i.stack.imgur.com/GNhxO.png';
+    if (this.posterPath == null) return 'https://i.stack.imgur.com/GNhxO.png';
     return 'https://image.tmdb.org/t/p/w500${this.posterPath}';
   }
 
